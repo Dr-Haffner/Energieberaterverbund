@@ -1,0 +1,70 @@
+
+/* ===== Grunddesign (responsive, modern) ===== */
+:root{
+  --bg:#0b1020; /* dunkles Blau */
+  --fg:#e9eef7; /* sehr hell */
+  --muted:#b9c7e6;
+  --accent:#3fb37f; /* grünlich */
+  --card:#141a33;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+.container{max-width:1000px;margin:0 auto;padding:0 1rem}
+
+/* ===== Header & Navigation ===== */
+.site-header{background:rgba(10,14,28,.7);backdrop-filter:saturate(140%) blur(6px);position:sticky;top:0;z-index:10;border-bottom:1px solid #1f2747}
+.site-header .container{display:flex;align-items:center;gap:1rem;justify-content:space-between;min-height:64px}
+.brand{color:var(--fg);text-decoration:none;font-weight:700}
+.nav{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:.4rem}
+.nav a.active{color:var(--fg);background:#1b2344}
+.btn{background:var(--accent);color:#04110a !important;font-weight:700;text-decoration:none;padding:.4rem .7rem;border-radius:.4rem;display:inline-block}
+.btn.secondary{background:transparent;color:var(--fg)!important;border:1px solid var(--muted)}
+
+/* ===== Hero & allgemeine Karten ===== */
+.hero{padding:4rem 0;background:radial-gradient(1200px 600px at 20% -10%,#1b254e,transparent),radial-gradient(1000px 600px at 100% 0%,#0e6a47,transparent)}
+.hero h1{font-size:clamp(2rem,4vw,3rem);margin:.2rem 0}
+.hero p{max-width:60ch}
+
+.features .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:2rem 0}
+.card{background:var(--card);padding:1rem;border:1px solid #1f2747;border-radius:.75rem}
+
+.grid.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.5rem 0}
+.project{margin:1rem 0}
+
+.cta{margin:3rem 0;text-align:center}
+.cta .btn{margin:.25rem}
+
+.site-footer{border-top:1px solid #1f2747;margin-top:3rem}
+.site-footer .container{padding:1rem 0}
+
+img{max-width:100%;height:auto;border-radius:.5rem}
+
+/* ===== Profilbereich (Bild neben Text) ===== */
+.profil{margin:2rem 0}
+.profil-grid{display:grid;gap:1rem;align-items:start}
+/* 1/3 (Bild) : 2/3 (Text) auf großen Bildschirmen */
+.profil--ein-drittel{grid-template-columns:1fr 2fr}
+.profil-foto img{display:block;width:100%;height:auto;border-radius:.75rem;border:1px solid #1f2747;background:#0e0e18}
+.profil-text h2{margin:0 0 .5rem 0}
+.badge-list{list-style:none;padding:0;margin:.75rem 0 1rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.badge-list li{background:#1b2344;border:1px solid #1f2747;color:var(--fg);padding:.25rem .5rem;border-radius:.5rem;font-size:.9rem}
+
+/* ===== Responsiv ===== */
+@media (max-width:1000px){.container{max-width:92%}}
+/* Unter 800px: Bild über dem Text, beides volle Breite */
+@media (max-width:800px){
+  .profil--ein-drittel{grid-template-columns:1fr}
+  .profil-foto{max-width:320px}
+}
+
+a {
+    color: cyan;
+    text-decoration: none; /* optional, falls du Unterstreichung entfernen willst */
+}
+
+a:hover {
+    color: #00ffff; /* etwas helleres Cyan beim Hover */
+}
+
