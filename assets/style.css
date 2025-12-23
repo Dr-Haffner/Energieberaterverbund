@@ -220,3 +220,46 @@ p, li, .card, .profil-text {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+
+.centered { 
+  text-align: center; 
+  margin: 2rem auto; 
+  max-width: 60ch; /* angenehme Zeilenbreite */
+}
+
+.cta-row {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
+
+.cta-row a {
+  padding: .6rem .9rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  background: #0b5;       /* Grün für Energieberatung */
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.cta-row a:last-child { background: #06c; }
+
+.cta-row a:hover {
+  background: #094; /* dunkleres Grün */
+}
+.cta-row a:last-child:hover {
+  background: #048; /* dunkleres Blau */
+}
+
+
+
+/* Text in der CTA explizit zentrieren – hebt globale left-Regeln auf */
+.cta h2,
+.cta p {
+  text-align: center;
+}
+
