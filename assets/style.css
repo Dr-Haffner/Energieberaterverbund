@@ -255,6 +255,8 @@ p, li, .card, .profil-text {
   background: #048; /* dunkleres Blau */
 }
 
+
+
 /* Text in der CTA explizit zentrieren – hebt globale left-Regeln auf */
 .cta h2,
 .cta p {
@@ -287,3 +289,25 @@ section.cta.container .cta-row {
   flex-wrap: wrap;
   margin-top: .5rem;
 }
+
+
+/* --- CTA visuell zentrieren, unabhängig von text-align --- */
+section.cta.container {
+  display: flex;
+  flex-direction: column;    /* Inhalte untereinander */
+  align-items: center;       /* horizontal zentriert */
+}
+
+/* Text *innerhalb* der CTA explizit zentrieren, falls andere Regeln entgegen wirken */
+section.cta.container h2,
+section.cta.container p {
+  text-align: center !important;
+}
+
+
+section.cta.container {
+  max-width: 600px;    /* oder eine passende Breite */
+  margin: 3rem auto;   /* oben/unten Abstand, horizontal zentriert */
+  text-align: center;  /* bleibt für den Inhalt */
+}
+
