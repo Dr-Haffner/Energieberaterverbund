@@ -255,11 +255,35 @@ p, li, .card, .profil-text {
   background: #048; /* dunkleres Blau */
 }
 
-
-
 /* Text in der CTA explizit zentrieren – hebt globale left-Regeln auf */
 .cta h2,
 .cta p {
   text-align: center;
 }
 
+
+/* --- CTA: erzwungen zentriert mit höherer Spezifität --- */
+section.cta.container {
+  text-align: center;
+}
+
+section.cta.container h2,
+section.cta.container p {
+  text-align: center;
+}
+
+/* Optional: Falls ein Framework/Reset Blockelemente streckt, alles sauber mittig anordnen */
+section.cta.container {
+  display: flex;
+  flex-direction: column;   /* untereinander */
+  align-items: center;      /* horizontal mittig */
+}
+
+/* Buttons robust nebeneinander mittig (falls du statt <p> einen Wrapper nutzt) */
+section.cta.container .cta-row {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
