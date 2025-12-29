@@ -328,29 +328,34 @@ section.cta.container {
 }
 
 
-
+/* ===== Footer: zwei Spalten – links Text, rechts Zähler ===== */
 .footer-row {
-  display: flex;
-  justify-content: space-between; /* links: Impressum, rechts: Zähler */
+  display: grid;
+  grid-template-columns: 1fr auto; /* links flexibel, rechts kompakt */
   align-items: center;
+  gap: 8px;
 }
 
+/* Linker Text (dein <small>) darf umbrechen */
+.footer-row small {
+  display: inline-flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  min-width: 0; /* verhindert Überbreite im Grid */
+}
+
+/* Zähler kompakt rechts */
 .visit-counter {
   font-size: 0.95rem;
-  color: #333;
-  background: #f5f5f5;
+  white-space: nowrap;     /* bleibt einzeilig */
+  color: var(--muted);     /* Dark-Theme */
+  background: #12172c;
   border-radius: 6px;
   padding: 6px 10px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #1f2747;
 }
 
-@media (max-width: 640px) {
-  .footer-row {
-    flex-direction: column;
-    gap: 8px;
-  }
-  .visit-counter {
-    align-self: flex-end; /* bleibt rechts, wenn Platz da ist */
-  }
+/* Optional: sehr schmale Geräte etwas enger */
+@media (max-width: 360px) {
+  .visit-counter { font-size: 0.9rem; padding: 5px 8px; }
 }
-
