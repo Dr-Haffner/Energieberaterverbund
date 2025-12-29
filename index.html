@@ -134,24 +134,33 @@
 
     // Fallback: nur aktuellen Wert auslesen
     function updateDisplay() {
-      fetch(`https://api.countapi.xyz/get/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`)
-        .then(r => r.json())
-        .then(d => {
-          const v = d && (d.value ?? d.count);
-          countEl.textContent = fmt(v ?? 0);
-        })
+
+fetch(`https://abacus.jasoncameron.dev/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`)
+  .then(r => r.json())
+  .then(d => {
+    const v = d && d.value;
+    countEl.textContent = fmt(v ?? 0);
+  })
+
+
+
         .catch(() => { countEl.textContent = '—'; });
     }
 
     // Beim ersten Besuch der Sitzung erhöhen, sonst nur anzeigen
-    const endpoint = hasVisited ? 'get' : 'hit';
-    fetch(`https://api.countapi.xyz/${endpoint}/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`)
-      .then(r => r.json())
-      .then(d => {
-        const v = d && (d.value ?? d.count);
-        countEl.textContent = fmt(v ?? 0);
-        if (!hasVisited) sessionStorage.setItem(sessionFlag, '1');
-      })
+   
+const endpoint = hasVisited ? 'get' : 'hit'; // bleibt stehen, wird aber nicht mehr genutzt
+fetch(`https://abacus.jasoncameron.dev/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`)
+  .then(r => r.json())
+  .then(d => {
+    const v = d && d.value;
+    countEl.textContent = fmt(v ?? 0);
+    if (!hasVisited) sessionStorage.setItem(sessionFlag, '1');
+  })
+
+
+
+
       .catch(() => {
         // Falls 'hit' blockiert ist (Adblock/CORS), versuche wenigstens den aktuellen Wert zu laden
         updateDisplay();
