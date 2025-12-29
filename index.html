@@ -5,14 +5,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Energieberatung – Start</title>
-<meta content="Energieberatung für Wohngebäude: iSFP, Heizlast, Wärmebrücken, Förderung &amp; Begleitung der Sanierung." name="description"/>
+<meta content="Energieberatung für Wohngebäude: Individuelle Sanierungsfahrpläne, iSFP, Heizlast, Wärmebrücken, Wärmebrückenberechnung, Förderung, Begleitung der Sanierung, Digitalisierung, Digitalisierung des Gebäudes." name="description"/>
 <link href="assets/style.css" rel="stylesheet"/>
 
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Energieberatung für Wohngebäude | Haffner &amp; Jost</title>
-<meta content="Individuelle Sanierungsfahrpläne (iSFP), Heizlast- &amp; Wärmebrückenberechnungen, Fördermittel-Check und Umsetzung mit Handwerksnetzwerk. Jetzt unverbindlich anfragen!" name="description"/>
+
 <link href="https://www.energieberaterverbund.de/" rel="canonical"/>
 <meta content="index, follow" name="robots"/>
 <meta content="Energieberatung für Wohngebäude | Haffner &amp; Jost" property="og:title"/>
@@ -74,7 +71,7 @@
 <section class="hero">
 <div class="container">
 <h1>Energieberatung für Wohngebäude</h1>
-<p>Individuelle Sanierungsfahrpläne (iSFP), Heizlast- &amp; komplexe Wärmebrückenberechnungen, Fördermittel-Check und Umsetzung mit Handwerksnetzwerk.</p>
+<p>Individuelle Sanierungsfahrpläne (iSFP), Heizlast- &amp; komplexe Wärmebrückenberechnungen, Fördermittel-Check und Umsetzung mit Handwerksnetzwerk, Digitalisierung des Gebäudes.</p>
 <p><a class="btn" href="mailto:info@energieberaterverbund.de">Jetzt unverbindlich anfragen</a></p>
 </div>
 </section>
@@ -103,13 +100,70 @@
 </p>
 </section>
 </main>
+
 <footer class="site-footer">
-<div class="container">
-<small>© <span id="year"></span> Energieberatung Dr. Haffner &amp; Jost • <a href="impressum.html">Impressum</a></small>
-</div>
+  <div class="container footer-row">
+    <small>
+     © <span id="year"></span> Energieberatung Dr. Haffner &amp; Jost • <a href="impressum.html">Impressum</a></small>
+
+    <!-- Besucherzähler -->
+    <div class="visit-counter" aria-live="polite" title="Besucher gesamt">
+      👥 <span id="visitCount">…</span>
+    </div>
+  </div>
 </footer>
+
+
 <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  // Jahr setzen (einmalig)
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // --- Besucherzähler (CountAPI, ohne 'create') ---
+  (function () {
+    const countEl = document.getElementById('visitCount');
+    if (!countEl) return;
+
+    const namespace = 'energieberaterverbund.de';  // Domain/Projekt
+    const key = 'homepage';                        // Seiten-spezifischer Schlüssel
+
+    const sessionFlag = 'visited-homepage';
+    const hasVisited = sessionStorage.getItem(sessionFlag) === '1';
+
+    // Zahl DE-formatieren
+    const fmt = (n) => (typeof n === 'number' ? n.toLocaleString('de-DE') : n);
+
+    // Fallback: nur aktuellen Wert auslesen
+    function updateDisplay() {
+      fetch(`https://api.countapi.xyz/get/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`)
+        .then(r => r.json())
+        .then(d => {
+          const v = d && (d.value ?? d.count);
+          countEl.textContent = fmt(v ?? 0);
+        })
+        .catch(() => { countEl.textContent = '—'; });
+    }
+
+    // Beim ersten Besuch der Sitzung erhöhen, sonst nur anzeigen
+    const endpoint = hasVisited ? 'get' : 'hit';
+    fetch(`https://api.countapi.xyz/${endpoint}/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`)
+      .then(r => r.json())
+      .then(d => {
+        const v = d && (d.value ?? d.count);
+        countEl.textContent = fmt(v ?? 0);
+        if (!hasVisited) sessionStorage.setItem(sessionFlag, '1');
+      })
+      .catch(() => {
+        // Falls 'hit' blockiert ist (Adblock/CORS), versuche wenigstens den aktuellen Wert zu laden
+        updateDisplay();
+      });
+
+    // Safety: nach 2s spätestens irgendwas anzeigen
+    setTimeout(() => {
+      if (countEl.textContent.trim() === '…') updateDisplay();
+    }, 2000);
+  })();
+</script>
+
+
 </body>
 </html>
