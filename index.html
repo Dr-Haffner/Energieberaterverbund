@@ -5,11 +5,14 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<meta content="Energieberatung für Wohngebäude: Individuelle Sanierungsfahrpläne, iSFP, Heizlast, Wärmebrücken, Wärmebrückenberechnung, Förderung, Begleitung der Sanierung, Digitalisierung, Digitalisierung des Gebäudes." name="description"/>
+
+<meta name="description" content="Energieberatung für Wohngebäude, Energieexperte, iSFP, Heizungstausch, Wärmepumpe, Heizlastberechnung, Förderung und Energieausweis, Digitalisierung von Gebäuden. Kostenlose Erstberatung!">
+
+<title>Energieberatung für Wohngebäude | iSFP, Heizlast & Förderungen – Dr. Haffner & Jost</title>
+
 
 <link href="assets/style.css" rel="stylesheet"/>
 
-<title>Energieberatung für Wohngebäude | Haffner &amp; Jost</title>
 
 <link href="https://www.energieberaterverbund.de/" rel="canonical"/>
 <meta content="index, follow" name="robots"/>
@@ -23,16 +26,16 @@
   "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Energieberatung Dr. Haffner & Jost",
-    "image": "https://www.energieberaterverbund.de/static/og-image.jpg",
+    ""image": "https://www.energieberaterverbund.de/assets/og-image.jpg",
     "url": "https://www.energieberaterverbund.de/",
     "email": "info@energieberaterverbund.de",
-    "telephone": "+49-17630159823",  
+    "telephone": "+4917630159823",  
     "address": {
-      "@type": "",
+      "@type": "PostalAddress",
       "streetAddress": "Ayrton-Senna Straße 7",
       "addressLocality": "Hockenheim",
       "postalCode": "68766",
-      "addressRegion": "BW",
+      "addressRegion": "Baden-Württemberg",
       "addressCountry": "DE"
     },
     "areaServed": [
@@ -114,7 +117,6 @@
   </div>
 </footer>
 
-
 <script>
   // Jahr setzen (einmalig)
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -142,9 +144,6 @@ fetch(`https://abacus.jasoncameron.dev/hit/${encodeURIComponent(namespace)}/${en
     const v = d && d.value;
     countEl.textContent = fmt(v ?? 0);
   })
-
-
-
         .catch(() => { countEl.textContent = '—'; });
     }
 
@@ -159,9 +158,6 @@ fetch(`https://abacus.jasoncameron.dev/hit/${encodeURIComponent(namespace)}/${en
     if (!hasVisited) sessionStorage.setItem(sessionFlag, '1');
   })
 
-
-
-
       .catch(() => {
         // Falls 'hit' blockiert ist (Adblock/CORS), versuche wenigstens den aktuellen Wert zu laden
         updateDisplay();
@@ -173,7 +169,5 @@ fetch(`https://abacus.jasoncameron.dev/hit/${encodeURIComponent(namespace)}/${en
     }, 2000);
   })();
 </script>
-
-
 </body>
 </html>
