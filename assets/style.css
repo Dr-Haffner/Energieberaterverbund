@@ -1,20 +1,35 @@
 
 /* ===== Grunddesign (responsive, modern) ===== */
 :root {
-  --bg: #0b1020; /* dunkles Blau */
-  --fg: #e9eef7; /* sehr hell */
+  --bg: #0b1020;       /* dunkles Blau */
+  --fg: #e9eef7;       /* sehr hell */
   --muted: #b9c7e6;
-  --accent: #3fb37f; /* grünlich */
+  --accent: #3fb37f;   /* grünlich */
   --card: #141a33;
+
+  /* Typo-Skala für Mobile-First */
+  --font-base: 16px;
+  --radius: .5rem;
+
+  /* Tap-Target Mindesthöhe */
+  --tap: 44px;
+}
+
+/* Respektiere reduzierte Bewegungen */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; overflow-x: hidden; } /* verhindert horizontales Scrollen */
+
+html, body { margin: 0; padding: 0; overflow-x: hidden; }
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
   background: var(--bg);
   color: var(--fg);
   line-height: 1.6;
+  font-size: var(--font-base);
+  -webkit-text-size-adjust: 100%;
 }
 
 .container {
@@ -32,6 +47,7 @@ body {
   top: 0;
   z-index: 10;
   border-bottom: 1px solid #1f2747;
+  padding: calc(0.5rem + env(safe-area-inset-top)) 1rem 0.5rem;
 }
 
 .site-header .container {
@@ -43,12 +59,24 @@ body {
   flex-wrap: wrap; /* erlaubt Umbruch auf Mobil */
 }
 
+/* Brand */
 .brand {
   color: var(--fg);
   text-decoration: none;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
+.brand-logo {
+  height: 56px;
+  width: 56px;
+  border-radius: .25rem;
+  vertical-align: middle;
+}
+
+/* Nav-Basis */
 .nav {
   display: flex;
   gap: .8rem;
@@ -59,8 +87,11 @@ body {
 .nav a {
   color: var(--muted);
   text-decoration: none;
-  padding: .4rem .6rem;
+  padding: .5rem .7rem;               /* größer für Finger */
   border-radius: .4rem;
+  min-height: var(--tap);             /* Tap-Target */
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav a.active {
@@ -68,14 +99,30 @@ body {
   background: #1b2344;
 }
 
+/* Toggle-Button für Mobile (optional) */
+.nav-toggle {
+  display: none;
+  appearance: none;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid #1f2747;
+  border-radius: .5rem;
+  padding: .5rem .75rem;
+  min-height: var(--tap);
+  line-height: 1;
+}
+
+/* ===== Buttons ===== */
 .btn {
   background: var(--accent);
   color: #04110a !important;
   font-weight: 700;
   text-decoration: none;
-  padding: .4rem .7rem;
-  border-radius: .4rem;
-  display: inline-block;
+  padding: .6rem .9rem;
+  border-radius: .5rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
 }
 
 .btn.secondary {
@@ -84,22 +131,31 @@ body {
   border: 1px solid var(--muted);
 }
 
+/* Fokus-Sichtbarkeit für Tastatur/Barrierefreiheit */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid #7dd3fc;  /* helles Cyan */
+  outline-offset: 2px;
+}
+
 /* ===== Hero & allgemeine Karten ===== */
 .hero {
-  padding: 4rem 0;
-  background: radial-gradient(1200px 600px at 20% -10%, #1b254e, transparent),
-              radial-gradient(1000px 600px at 100% 0%, #0e6a47, transparent);
+  padding: 2.5rem 0; /* Mobile-first kleiner, später größer */
+  background:
+    radial-gradient(1200px 600px at 20% -10%, #1b254e, transparent),
+    radial-gradient(1000px 600px at 100% 0%, #0e6a47, transparent);
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin: .2rem 0;
+  /* Mobile-first, skaliert bis Desktop */
+  font-size: clamp(1.8rem, 5.5vw, 3rem);
+  margin: .25rem 0 .5rem;
 }
 
-.hero p {
-  max-width: 60ch;
-}
+.hero p { max-width: 60ch; }
 
+/* Features/Grid */
 .features .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -127,20 +183,21 @@ body {
   margin: 3rem 0;
   text-align: center;
 }
-
 .cta .btn { margin: .25rem; }
 
+/* Footer */
 .site-footer {
   border-top: 1px solid #1f2747;
   margin-top: 3rem;
 }
-
 .site-footer .container { padding: 1rem 0; }
 
+/* Bilder allgemein */
 img {
   max-width: 100%;
   height: auto;
   border-radius: .5rem;
+  display: block;
 }
 
 /* ===== Profilbereich (Bild neben Text) ===== */
@@ -151,11 +208,9 @@ img {
   align-items: start;
   min-width: 0; /* verhindert Überbreite */
 }
-
 .profil--ein-drittel { grid-template-columns: 1fr 2fr; }
 
 .profil-foto img {
-  display: block;
   width: 100%;
   height: auto;
   border-radius: .75rem;
@@ -173,7 +228,6 @@ img {
   flex-wrap: wrap;
   gap: .5rem;
 }
-
 .badge-list li {
   background: #1b2344;
   border: 1px solid #1f2747;
@@ -183,37 +237,9 @@ img {
   font-size: .9rem;
 }
 
-/* ===== Responsiv ===== */
-@media (max-width: 1000px) {
-  .container { max-width: 92%; }
-}
-
-@media (max-width: 800px) {
-  .profil--ein-drittel { grid-template-columns: 1fr; }
-  .profil-foto { max-width: 320px; }
-}
-
-@media (max-width: 768px) {
-  .site-header .container { flex-direction: column; align-items: flex-start; }
-  .nav { width: 100%; justify-content: center; }
-  .hero { padding: 2rem 0; }
-}
-
-@media (max-width: 600px) {
-  .features .grid, .grid.two { grid-template-columns: 1fr; }
-  .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
-  .hero p { max-width: 100%; }
-}
-
 /* ===== Links ===== */
-a {
-  color: cyan;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #00ffff;
-}
+a { color: cyan; text-decoration: none; }
+a:hover { color: #00ffff; }
 
 /* ===== Text-Umbruch für lange Wörter ===== */
 p, li, .card, .profil-text {
@@ -221,13 +247,21 @@ p, li, .card, .profil-text {
   word-break: break-word;
 }
 
-
-.centered { 
-  text-align: center; 
-  margin: 2rem auto; 
-  max-width: 60ch; /* angenehme Zeilenbreite */
+/* ===== CTA – kompakt & eindeutig zentriert ===== */
+section.cta.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* wirkt auf Inhalt */
+}
+section.cta.container h2,
+section.cta.container p {
+  text-align: center !important;
 }
 
+/* Buttons in der CTA nebeneinander, mittig */
 .cta-row {
   display: flex;
   gap: .75rem;
@@ -235,98 +269,18 @@ p, li, .card, .profil-text {
   flex-wrap: wrap;
   margin-top: .5rem;
 }
-
 .cta-row a {
   padding: .6rem .9rem;
   border-radius: .5rem;
   text-decoration: none;
-  background: #0b5;       /* Grün für Energieberatung */
+  background: #0b5; /* Grün für Energieberatung */
   color: #fff;
   font-weight: 600;
   transition: background 0.3s ease;
 }
-
 .cta-row a:last-child { background: #06c; }
-
-.cta-row a:hover {
-  background: #094; /* dunkleres Grün */
-}
-.cta-row a:last-child:hover {
-  background: #048; /* dunkleres Blau */
-}
-
-
-
-/* Text in der CTA explizit zentrieren – hebt globale left-Regeln auf */
-.cta h2,
-.cta p {
-  text-align: center;
-}
-
-
-/* --- CTA: erzwungen zentriert mit höherer Spezifität --- */
-section.cta.container {
-  text-align: center;
-}
-
-section.cta.container h2,
-section.cta.container p {
-  text-align: center;
-}
-
-/* Optional: Falls ein Framework/Reset Blockelemente streckt, alles sauber mittig anordnen */
-section.cta.container {
-  display: flex;
-  flex-direction: column;   /* untereinander */
-  align-items: center;      /* horizontal mittig */
-}
-
-/* Buttons robust nebeneinander mittig (falls du statt <p> einen Wrapper nutzt) */
-section.cta.container .cta-row {
-  display: flex;
-  justify-content: center;
-  gap: .75rem;
-  flex-wrap: wrap;
-  margin-top: .5rem;
-}
-
-
-/* --- CTA visuell zentrieren, unabhängig von text-align --- */
-section.cta.container {
-  display: flex;
-  flex-direction: column;    /* Inhalte untereinander */
-  align-items: center;       /* horizontal zentriert */
-}
-
-/* Text *innerhalb* der CTA explizit zentrieren, falls andere Regeln entgegen wirken */
-section.cta.container h2,
-section.cta.container p {
-  text-align: center !important;
-}
-
-
-section.cta.container {
-  max-width: 600px;    /* oder eine passende Breite */
-  margin: 3rem auto;   /* oben/unten Abstand, horizontal zentriert */
-  text-align: center;  /* bleibt für den Inhalt */
-}
-
-
-
-.brand__logo {
-  height: 40px;      /* zentrale Steuerung der Logogröße */
-  width: auto;
-  object-fit: contain;
-}
-
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e6e6e6;
-}
-
+.cta-row a:hover { background: #094; }        /* dunkleres Grün */
+.cta-row a:last-child:hover { background: #048; } /* dunkleres Blau */
 
 /* ===== Footer: zwei Spalten – links Text, rechts Zähler ===== */
 .footer-row {
@@ -335,27 +289,63 @@ section.cta.container {
   align-items: center;
   gap: 8px;
 }
-
-/* Linker Text (dein <small>) darf umbrechen */
 .footer-row small {
   display: inline-flex;
   gap: .5rem;
   flex-wrap: wrap;
   min-width: 0; /* verhindert Überbreite im Grid */
 }
-
-/* Zähler kompakt rechts */
 .visit-counter {
   font-size: 0.95rem;
-  white-space: nowrap;     /* bleibt einzeilig */
-  color: var(--muted);     /* Dark-Theme */
+  white-space: nowrap; /* bleibt einzeilig */
+  color: var(--muted);
   background: #12172c;
   border-radius: 6px;
   padding: 6px 10px;
   border: 1px solid #1f2747;
 }
 
-/* Optional: sehr schmale Geräte etwas enger */
+/* ===== Responsiv ===== */
+
+/* <= 1000px: Container etwas schmaler */
+@media (max-width: 1000px) {
+  .container { max-width: 92%; }
+}
+
+/* <= 800px: Profil 1-spaltig, Foto begrenzen */
+@media (max-width: 800px) {
+  .profil--ein-drittel { grid-template-columns: 1fr; }
+  .profil-foto { max-width: 320px; }
+}
+
+/* <= 768px: Header stapeln, Menü optional klappbar */
+@media (max-width: 768px) {
+  .site-header .container { flex-direction: column; align-items: flex-start; }
+
+  .nav-toggle { display: inline-flex; }
+
+  /* Falls du UL/ID nutzt (empfohlen): #primary-nav */
+  #primary-nav { 
+    display: none; 
+    width: 100%;
+    margin: .5rem 0 0;
+    padding: 0;
+  }
+  #primary-nav.is-open { display: block; }
+
+  /* Wenn du aktuell <nav><a>…</a></nav> hast, diese Regeln helfen trotzdem: */
+  .nav { width: 100%; justify-content: center; }
+}
+
+/* <= 600px: volle Breite, größere Überschrift-Anpassung */
+@media (max-width: 600px) {
+  .features .grid, .grid.two { grid-template-columns: 1fr; }
+  .hero { padding: 2rem 0; }
+  .hero h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  .hero p { max-width: 100%; }
+}
+
+/* <= 360px: Zähler kompakter */
 @media (max-width: 360px) {
   .visit-counter { font-size: 0.9rem; padding: 5px 8px; }
 }
