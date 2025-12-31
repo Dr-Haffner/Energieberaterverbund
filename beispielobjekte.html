@@ -1,42 +1,62 @@
-
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Beispielobjekte</title>
-  <meta name="description" content="Referenzen und Beispielprojekte der Energieberatung.">
+
+  <title>Beispielobjekte | Energieberatung Dr. Haffner & Jost – iSFP & Heizlastprojekte</title>
+
+  <meta name="description" content="Referenzen und Beispielprojekte der Energieberatung Dr. Haffner & Jost – iSFP, Heizlastberechnungen, Energieausweise und Fördermittelprojekte in Mannheim & Rhein-Neckar-Kreis.">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Beispielobjekte | Energieberatung Dr. Haffner & Jost">
+  <meta property="og:description" content="Ausgewählte Referenzen und Projekte der Energieberatung Dr. Haffner & Jost – iSFP, Heizlastberechnungen, Fördermittelberatung und energetische Gebäudesanierung.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.deine-domain.de/beispielobjekte.html">
+  <meta property="og:image" content="https://www.deine-domain.de/assets/img/og-image.jpg">
+  <meta property="og:locale" content="de_DE">
+
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html"><img src="assets/img/Logo.jpg" alt="Logo Energieberatung Dr. Haffner &amp; Jost" class="brand-logo" style="height:56px;width:56px;vertical-align:middle;margin-right:8px;" />
-	<span class="brand-title">Energieberatung Dr. Haffner &amp; Jost</span></a>
-	<nav class="nav">
-        <a href="index.html">Start</a>
-        <a href="wir-ueber-uns.html">Wir über uns</a>
-        <a href="beispielobjekte.html" class="active">Beispielobjekte</a>
-        <a href="impressum.html">Impressum</a>
-        <a class="btn" href="mailto:info@energieberaterverbund.de">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+ 
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <img src="assets/img/Logo.jpg"
+           alt="Logo Energieberatung Dr. Haffner &amp; Jost"
+           class="brand-logo"
+           style="height:56px; width:56px; vertical-align:middle; margin-right:8px;" />
+      <span class="brand-title">Energieberatung Dr. Haffner &amp; Jost</span>
+    </a>
+
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="index.html">Start</a>
+      <a href="wir-ueber-uns.html" class="active" aria-current="page">Über uns</a>
+      <a href="beispielobjekte.html">Beispielobjekte</a>
+      <a href="impressum.html">Impressum</a>
+      <a class="btn" href="mailto:info@energieberaterverbund.de">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+
   <main class="container">
-    <h1>Beispielobjekte</h1>
-    <p>Ausgewählte Projekte (Kurzdarstellung).</p>
-    
-<article class="project">
+    <h1>Beispielobjekte – Energieberatung Dr. Haffner & Jost</h1>
+    <p>Ausgewählte Projekte und Referenzen aus den Bereichen iSFP, Heizlastberechnung, Energieausweis und Fördermittelberatung.</p>
+
+    <article class="project">
       <h2>MFH, GBG Projekt mit Gewerbeeinheit, Baujahr 1952</h2>
       <ul>
         <li>Heizlastberechnung nach DIN EN 12831</li>
         <li>Digitalisierung der Gebäudedaten</li>
         <li>Erstellung eines Energieverbrauchsausweis nach GEG</li>
-       </ul>
+      </ul>
     </article>
-    <article class="project">
 
-<article class="project">
+    <article class="project">
       <h2>EFH, Baujahr 1970 – iSFP & KfW-Förderung</h2>
       <ul>
         <li>Ausgang: 357 kWh/m²·a, Ziel: 23,1 kWh/m²·a Primärenergie</li>
@@ -45,6 +65,7 @@
         <li>Leistungen: iSFP, Heizlast nach DIN EN 12831, Wärmebrücken, Förderantrag</li>
       </ul>
     </article>
+
     <article class="project">
       <h2>MFH, Baujahr 1995 – Heizlast & Hydraulik</h2>
       <ul>
@@ -54,11 +75,32 @@
       </ul>
     </article>
   </main>
+
   <footer class="site-footer">
     <div class="container">
-      <small>© <span id="year"></span> Energieberatung Haffner & Jost • <a href="impressum.html">Impressum</a></small>
+      <small>© <span id="year"></span> Energieberatung Dr. Haffner &amp; Jost · <a href="impressum.html">Impressum</a></small>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Strukturierte Daten für Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Energieberatung Dr. Haffner & Jost",
+    "url": "https://www.deine-domain.de",
+    "logo": "https://www.deine-domain.de/assets/img/Logo.jpg",
+    "sameAs": [],
+    "description": "Energieberatung, iSFP, Fördermittelberatung und Heizlastberechnung",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DE"
+    }
+  }
+  </script>
 </body>
 </html>
