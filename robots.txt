@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dr-haffner.github.io/Energieberaterverbund/sitemap.xml
+Sitemap: https://www.energieberaterverbund.de/sitemap.xml
