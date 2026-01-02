@@ -2,20 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://dr-haffner.github.io/Energieberaterverbund/</loc>
+    <loc>https://www.energieberaterverbund.de/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://dr-haffner.github.io/Energieberaterverbund/wir-ueber-uns.html</loc>
+    <loc>https://www.energieberaterverbund.de/wir-ueber-uns.html</loc>
   </url>
 
   <url>
-    <loc>https://dr-haffner.github.io/Energieberaterverbund/beispielobjekte.html</loc>
+    <loc>https://www.energieberaterverbund.de/beispielobjekte.html</loc>
   </url>
 
   <url>
-    <loc>https://dr-haffner.github.io/Energieberaterverbund/impressum.html</loc>
+    <loc>https://www.energieberaterverbund.de/impressum.html</loc>
   </url>
 
+  <url>
+    <loc>https://www.energieberaterverbund.de/datenschutzerklaerung.html</loc>
+  </url>
+  
 </urlset>
