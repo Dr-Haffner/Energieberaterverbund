@@ -68,7 +68,9 @@
 <div class="container">
 <a class="brand" href="index.html"><img alt="Logo Energieberatung Dr. Haffner &amp; Jost" class="brand-logo" src="assets/img/Logo.jpg" style="height:56px;width:56px;vertical-align:middle;margin-right:8px;"/>
 <span class="brand-title">Energieberatung Dr. Haffner &amp; Jost</span></a>
-<nav class="nav">
+<button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+<!--<nav class="nav">-->
+<nav id="primary-nav" class="nav">
 <a class="active" href="index.html">Start</a>
 <a href="wir-ueber-uns.html">Wir über uns</a>
 <a href="foerdermittel.html">Fördermittel &amp; Zuschüsse</a>
@@ -178,5 +180,19 @@ fetch(`https://abacus.jasoncameron.dev/hit/${encodeURIComponent(namespace)}/${en
     }, 2000);
   })();
 </script>
+
+
+<script>
+document.querySelector('.nav-toggle')
+  .addEventListener('click', () => {
+    document.querySelector('#primary-nav').classList.toggle('is-open');
+});
+</script>
+
+
 </body>
 </html>
+
+
+
+
