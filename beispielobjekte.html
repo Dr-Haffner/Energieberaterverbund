@@ -34,7 +34,12 @@
       <span class="brand-title">Energieberatung Dr. Haffner &amp; Jost</span>
     </a>
 
-	<nav class="nav" aria-label="Hauptnavigation">
+
+<button class="nav-toggle" aria-label="Menü öffnen">☰</button>
+
+<!-- Navigation mit ID -->
+<nav id="primary-nav" class="nav" aria-label="Hauptnavigation">
+
   		<a href="index.html">Start</a>
   	<a href="wir-ueber-uns.html">Wir über uns</a>
 	<a href="foerdermittel.html">Fördermittel &amp; Zuschüsse</a>
@@ -105,6 +110,14 @@
       "addressCountry": "DE"
     }
   }
-  </script>
+
+</script>
+<script>
+document.querySelector('.nav-toggle')
+  .addEventListener('click', () => {
+    document.querySelector('#primary-nav').classList.toggle('is-open');
+});
+</script>
+
 </body>
 </html>
