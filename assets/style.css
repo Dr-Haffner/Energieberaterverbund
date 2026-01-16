@@ -349,21 +349,3 @@ section.cta.container p {
 @media (max-width: 360px) {
   .visit-counter { font-size: 0.9rem; padding: 5px 8px; }
 }
-
-/* ===== Footer mobile optimiert ===== */
-@media (max-width: 480px) {
-  .footer-row {
-    grid-template-columns: 1fr auto; /* zwei Spalten beibehalten */
-    align-items: center;
-    gap: 4px; /* etwas enger für kleine Bildschirme */
-  }
-  .footer-row small {
-    white-space: nowrap; /* Text links nicht umbrechen */
-  }
-  .visit-counter {
-    white-space: nowrap; /* Zähler bleibt einzeilig rechts */
-    font-size: 0.85rem;  /* Schriftgröße anpassen */
-    padding: 4px 6px;    /* kompakter */
-  }
-}
-
