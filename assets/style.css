@@ -349,3 +349,22 @@ section.cta.container p {
 @media (max-width: 360px) {
   .visit-counter { font-size: 0.9rem; padding: 5px 8px; }
 }
+
+
+:root {
+  /* Falls du eine globale Variable willst: */
+  --about-tab-blue: #141a33; /* <- durch dein Tab-Blau ersetzen */
+}
+.btn-google-review {
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:6px;
+  background: var(--about-tab-blue);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:16px;
+  line-height:1;
+}
+.btn-google-review:hover { filter: brightness(1.05); }
+
