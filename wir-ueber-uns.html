@@ -14,6 +14,21 @@
   <meta property="og:image" content="https://www.energieberaterverbund.de/assets/img/og-image.jpg">
   <meta property="og:locale" content="de_DE">
   <link rel="stylesheet" href="assets/style.css">
+
+<style>
+  /* Review-Button zentrieren und Optik an Karten angleichen */
+  .review-cta { display: flex; justify-content: center; margin: 2rem 0; }
+  .btn-google-review.card.card--button {
+    display: inline-flex; align-items: center; gap: .5rem;
+    text-decoration: none; color: var(--on-card, #fff);
+    font-weight: 600; padding: .8rem 1.2rem; border-radius: 10px;
+    box-shadow: 0 2px 0 rgba(0,0,0,.15);
+    transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .btn-google-review.card.card--button:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.22); filter: brightness(1.08); }
+  .btn-google-review.card.card--button:active { transform: translateY(0); box-shadow: 0 2px 0 rgba(0,0,0,.15); }
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -91,12 +106,23 @@
           <li>iSFP &amp; Fördermittelberatung</li>
           <li>Heizlastberechnung nach DIN EN 12831</li>
           <li>Digitalisierung von Gebäudedaten</li>
-          <li>Wärmebrücken (Detailnachweise)</li>
-          <li>Wohnflächenberechnung</li>
+          <li>Wärmebrücken &amp; Detailnachweise</li>
+          <li>Wohnflächenberechnung nach WoFlV / DIN 277</li>
         </ul>
       </div>
     </article>
   </section>
+<hr class="section-sep">
+
+<p class="review-cta">
+  <a class="btn-google-review"
+     href="https://g.page/r/CXqmUTcFNrQpEAE/review"
+     target="_blank" rel="noopener">
+    Jetzt Google‑Bewertung abgeben ⭐⭐⭐⭐⭐
+  </a>
+</section>
+
+
   <section class="grid two">
     <div class="card">
       <h2>Unsere Kompetenzen</h2>
