@@ -3,23 +3,38 @@
 
   <url>
     <loc>https://www.energieberaterverbund.de/</loc>
+    <lastmod>2026-03-25</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.energieberaterverbund.de/wir-ueber-uns.html</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.energieberaterverbund.de/foerdermittel.html</loc>
+    <lastmod>2026-03-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.energieberaterverbund.de/GEGundNEWS.html</loc>
+    <lastmod>2026-03-25</lastmod>
   </url>
 
   <url>
     <loc>https://www.energieberaterverbund.de/beispielobjekte.html</loc>
+    <lastmod>2026-03-25</lastmod>
   </url>
 
   <url>
     <loc>https://www.energieberaterverbund.de/impressum.html</loc>
+    <lastmod>2026-03-25</lastmod>
   </url>
 
   <url>
     <loc>https://www.energieberaterverbund.de/datenschutzerklaerung.html</loc>
+    <lastmod>2026-03-25</lastmod>
   </url>
   
 </urlset>
