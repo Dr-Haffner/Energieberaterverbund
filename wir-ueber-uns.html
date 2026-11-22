@@ -2,17 +2,8 @@
 <html lang="de">
 <head>
 
-<!-- Google Analytics Fallback -->
-<script data-id="G-K01R2SH24H">
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-K01R2SH24H');
-var s = document.createElement('script');
-s.src = "https://www.googletagmanager.com/gtag/js?id=G-K01R2SH24H";
-s.async = true;
-document.head.appendChild(s);
-</script>
+<!-- Google Analytics wird erst nach Einwilligung geladen (siehe assets/consent.js) -->
+<script src="assets/consent.js" defer></script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +38,7 @@ document.head.appendChild(s);
 <header class="site-header">
   <div class="container">
     <a class="brand" href="index.html">
-      <img src="assets/img/Logo.jpg" alt="Logo Energieberatung Dr. Haffner &amp; Jost" class="brand-logo" style="height:56px; width:56px; vertical-align:middle; margin-right:8px;" />
+      <img src="assets/img/Logo.jpg" width="56" height="56" alt="Logo Energieberatung Dr. Haffner &amp; Jost" class="brand-logo" style="height:56px; width:56px; vertical-align:middle; margin-right:8px;" />
       <span class="brand-title">Energieberatung Dr. Haffner &amp; Jost</span>
     </a>
     <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
@@ -55,10 +46,10 @@ document.head.appendChild(s);
       <a href="index.html">Start</a>
       <a href="wir-ueber-uns.html" class="active" aria-current="page">Wir über uns</a>
       <a href="foerdermittel.html">Fördermittel &amp; Zuschüsse</a>
-      <a href="GEGundNEWS.html">GEG – Aktueller Stand &amp; Änderungen</a>
+      <a href="GEGundNEWS.html">GEG &amp; GModG</a>
       <a href="beispielobjekte.html">Beispielobjekte</a>
-      <a href="impressum.html">Impressum</a>
-      <a class="btn" href="mailto:info@energieberaterverbund.de">Kontakt</a>
+      <a href="ablauf-faq.html">Ablauf &amp; FAQ</a>
+      <a class="btn" href="index.html#sanierungs-check">Anfrage</a>
     </nav>
   </div>
 </header>
@@ -67,13 +58,13 @@ document.head.appendChild(s);
   <p>
     Wir sind unabhängige <strong>Energieeffizienz-Experten</strong> und begleiten private,
     gewerbliche und öffentliche Auftraggeber bei Energieberatung,
-    Fördermittelberatung und energetischer Gebäudesanierung in Mannheim und Umgebung.
+    Fördermittelberatung und energetischer Gebäudesanierung in Hockenheim, Mannheim, Lampertheim und im Rhein-Neckar-Kreis.
   </p>
   <!-- Profil Haffner -->
   <section class="profil">
     <article class="profil-grid profil--ein-drittel">
       <div class="profil-foto">
-        <img src="assets/img/haffner.jpg" alt="Dr.-Ing. Andreas Haffner – Energieeffizienz-Experte, iSFP, Heizlastberechnung" loading="lazy" width="300" height="300">
+        <img src="assets/img/haffner.jpg" alt="Dr.-Ing. Andreas Haffner – Energieeffizienz-Experte, iSFP, Heizlastberechnung" loading="lazy" width="800" height="601">
       </div>
       <div class="profil-text">
         <h2>
@@ -100,7 +91,7 @@ document.head.appendChild(s);
   <section class="profil">
     <article class="profil-grid profil--ein-drittel">
       <div class="profil-foto">
-        <img src="assets/img/jost.jpg" alt="Dipl.-Wirtsch.-Ing. Andreas Jost – Energieberater, iSFP, Fördermittel" loading="lazy" width="300" height="300">
+        <img src="assets/img/jost.jpg" alt="Dipl.-Wirtsch.-Ing. Andreas Jost – Energieberater, iSFP, Fördermittel" loading="lazy" width="800" height="639">
       </div>
 
 <div class="profil-text">
@@ -134,7 +125,7 @@ document.head.appendChild(s);
      target="_blank" rel="noopener">
     Jetzt Google‑Bewertung abgeben ⭐⭐⭐⭐⭐
   </a>
-</section>
+</p>
 
 
   <section class="grid two">
@@ -159,7 +150,10 @@ document.head.appendChild(s);
 </main>
 <footer class="site-footer">
   <div class="container">
-    <small>© <span id="year"></span> Energieberatung Dr. Haffner &amp; Jost • <a href="impressum.html">Impressum</a> • <a href="datenschutzerklaerung.html">Datenschutzerklärung</a></small>
+    <small>© <span id="year"></span> Energieberatung Dr. Haffner &amp; Jost • <a href="impressum.html">Impressum</a> • <a href="datenschutzerklaerung.html">Datenschutzerklärung</a> • <a href="#" class="js-cookie-settings">Cookie-Einstellungen</a></small>
+  </div>
+  <div class="container">
+    <p class="footer-regions">Einsatzgebiet: <a href="energieberater-hockenheim.html">Hockenheim</a> · <a href="energieberater-mannheim.html">Mannheim</a> · <a href="energieberater-lampertheim.html">Lampertheim</a> · <a href="energieberater-rhein-neckar-kreis.html">Rhein-Neckar-Kreis</a></p>
   </div>
 </footer>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
@@ -171,7 +165,7 @@ document.head.appendChild(s);
   "name": "Energieberatung Dr. Haffner & Jost",
   "url": "https://www.energieberaterverbund.de",
   "logo": "https://www.energieberaterverbund.de/assets/img/Logo.jpg",
-  "sameAs": ["https://www.energie-effizienz-experten.de/experten/haffner","https://www.hockenheim.de","https://www.kfw.de/kfw.de"],
+  "sameAs": ["https://g.page/r/CXqmUTcFNrQpEAE"],
   "description": "Energieberatung, iSFP, Fördermittelberatung und Heizlastberechnung",
   "address": {"@type": "PostalAddress","addressCountry": "DE"},
   "member": [
