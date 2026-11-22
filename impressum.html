@@ -2,17 +2,8 @@
 <html lang="de">
 <head>
   
-<!-- Google Analytics Fallback -->
-<script data-id="G-K01R2SH24H">
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-K01R2SH24H');
-var s = document.createElement('script');
-s.src = "https://www.googletagmanager.com/gtag/js?id=G-K01R2SH24H";
-s.async = true;
-document.head.appendChild(s);
-</script>
+<!-- Google Analytics wird erst nach Einwilligung geladen (siehe assets/consent.js) -->
+<script src="assets/consent.js" defer></script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +24,7 @@ document.head.appendChild(s);
 <header class="site-header">
   <div class="container">
     <a class="brand" href="index.html">
-      <img src="assets/img/Logo.jpg" alt="Logo Energieberatung Dr. Haffner &amp; Jost" class="brand-logo" style="height:56px; width:56px; vertical-align:middle; margin-right:8px;" />
+      <img src="assets/img/Logo.jpg" width="56" height="56" alt="Logo Energieberatung Dr. Haffner &amp; Jost" class="brand-logo" style="height:56px; width:56px; vertical-align:middle; margin-right:8px;" />
       <span class="brand-title">Energieberatung Dr. Haffner &amp; Jost</span>
     </a>
     <!-- Burger-Menü-Button -->
@@ -43,10 +34,10 @@ document.head.appendChild(s);
       <a href="index.html">Start</a>
       <a href="wir-ueber-uns.html">Wir über uns</a>
       <a href="foerdermittel.html">Fördermittel &amp; Zuschüsse</a>
-      <a href="GEGundNEWS.html">GEG – Aktueller Stand &amp; Änderungen</a>
+      <a href="GEGundNEWS.html">GEG &amp; GModG</a>
       <a href="beispielobjekte.html">Beispielobjekte</a>
-      <a href="impressum.html" class="active" aria-current="page">Impressum</a>
-      <a class="btn" href="mailto:info@energieberaterverbund.de">Kontakt</a>
+      <a href="ablauf-faq.html">Ablauf &amp; FAQ</a>
+      <a class="btn" href="index.html#sanierungs-check">Anfrage</a>
     </nav>
   </div>
 </header>
@@ -62,6 +53,7 @@ document.head.appendChild(s);
   </p>
   <p>
     Telefon: +49 6205 9039787<br>
+    Mobil: +49 176 30159823<br>
     E‑Mail: <a href="mailto:info@energieberaterverbund.de">info@energieberaterverbund.de</a>
   </p>
   <p>
@@ -110,37 +102,9 @@ document.head.appendChild(s);
 
   <h2>Datenschutz</h2>
   <p>
-    Die Nutzung dieser Website ist in der Regel ohne Angabe personenbezogener Daten möglich.
-    Soweit personenbezogene Daten (z. B. Name, Anschrift oder E-Mail-Adressen) erhoben werden,
-    erfolgt dies – soweit möglich – stets auf freiwilliger Basis. Diese Daten werden ohne Ihre
-    ausdrückliche Zustimmung nicht an Dritte weitergegeben. Wir weisen darauf hin, dass die
-    Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken
-    aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
-  </p>
-  <p>
-    Personenbezogene Daten sind Informationen, die auf Ihre Identität hinweisen: Name, Adresse,
-    Postanschrift, Lieferanschrift, Rechnungsanschrift, Telefonnummer und E-Mail-Adresse.
-    Wir speichern Ihre personenbezogenen Daten nur, soweit dies für die Abwicklung und
-    Bearbeitung von Anfragen erforderlich ist. Wir geben Ihre personenbezogenen Daten nicht an
-    Dritte weiter.
-  </p>
-  <p>
-    Wenn Sie unabhängig von einer Bestellung unsere anderen Services nutzen (z. B. einen Newsletter
-    abonnieren), benötigen wir für die Speicherung Ihrer Daten Ihre Einwilligung. Sie werden gesondert
-    zur Erteilung dieser Einwilligung aufgefordert, können diese Daten jederzeit bei uns einsehen und
-    Ihre Einwilligung jederzeit widerrufen.
-  </p>
-  <p>
-    Anonymisierte Daten: Mit Ihrem Besuch in unserem Angebot können Informationen über den Zugriff
-    (Datum, Uhrzeit, betrachtete Seite) auf unserem Server gespeichert werden. Diese Daten gehören
-    nicht zu den personenbezogenen Daten, sondern sind anonymisiert. Sie werden von uns ausschließlich
-    zu statistischen Zwecken ausgewertet.
-  </p>
-  <p>
-    Einsatz von Cookies: Auf bestimmten Seiten kommen Cookies zum Einsatz. Die meisten Browser sind so
-    eingestellt, dass sie Cookies automatisch akzeptieren. Sie können das Speichern von Cookies jedoch
-    deaktivieren oder Ihren Browser so einstellen, dass er Sie benachrichtigt, sobald Cookies gesendet
-    werden. Die gespeicherten Daten werden mit Ihrem Verlassen unserer Website wieder gelöscht.
+    Informationen zur Verarbeitung personenbezogener Daten auf dieser Website (u.&nbsp;a. Hosting, E-Mail,
+    Cookies nach § 25 TDDDG, Google Analytics, Ihre Rechte und die zuständige Aufsichtsbehörde) finden Sie in unserer
+    <a href="datenschutzerklaerung.html">Datenschutzerklärung</a>.
   </p>
 
   <h3>Verbraucherstreitbeilegung</h3>
@@ -156,8 +120,13 @@ document.head.appendChild(s);
     nicht vollständig entsprechen, bleiben die übrigen Teile in Inhalt und Gültigkeit unberührt.
   </p>
 
+  <h3>Umsatzsteuer</h3>
   <p>
-    Hinweis zur Umsatzsteuer: Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.<br>
+    Hinweis zur Umsatzsteuer: Gemäß § 19 UStG (Kleinunternehmerregelung) wird keine Umsatzsteuer berechnet;
+    eine Umsatzsteuer-Identifikationsnummer nach § 27a UStG ist nicht vorhanden.<br>
+    <!-- Falls vom Bundeszentralamt für Steuern eine Wirtschafts-Identifikationsnummer (§ 139c AO) zugeteilt wurde,
+         ist diese nach § 5 Abs. 1 Nr. 6 DDG hier anzugeben, z. B.:
+         Wirtschafts-Identifikationsnummer: DE...-00001 -->
     Tätigkeitsbereich: Wir sind ausschließlich als freiberufliche Energieberater tätig und unterliegen nicht der
     Gewerbeordnung.
   </p>
@@ -165,7 +134,10 @@ document.head.appendChild(s);
 
 <footer class="site-footer">
   <div class="container">
-    <small>© <span id="year"></span> Energieberatung Dr. Haffner &amp; Jost • <a href="impressum.html">Impressum</a> • <a href="datenschutzerklaerung.html">Datenschutzerklärung</a></small>
+    <small>© <span id="year"></span> Energieberatung Dr. Haffner &amp; Jost • <a href="impressum.html">Impressum</a> • <a href="datenschutzerklaerung.html">Datenschutzerklärung</a> • <a href="#" class="js-cookie-settings">Cookie-Einstellungen</a></small>
+  </div>
+  <div class="container">
+    <p class="footer-regions">Einsatzgebiet: <a href="energieberater-hockenheim.html">Hockenheim</a> · <a href="energieberater-mannheim.html">Mannheim</a> · <a href="energieberater-lampertheim.html">Lampertheim</a> · <a href="energieberater-rhein-neckar-kreis.html">Rhein-Neckar-Kreis</a></p>
   </div>
 </footer>
 
@@ -181,7 +153,7 @@ document.head.appendChild(s);
   "name": "Energieberatung Dr. Haffner & Jost",
   "url": "https://www.energieberaterverbund.de",
   "logo": "https://www.energieberaterverbund.de/assets/img/Logo.jpg",
-  "sameAs": [],
+  "sameAs": ["https://g.page/r/CXqmUTcFNrQpEAE"],
   "description": "Energieberatung, iSFP, Fördermittelberatung und Heizlastberechnung",
   "address": {
     "@type": "PostalAddress",
