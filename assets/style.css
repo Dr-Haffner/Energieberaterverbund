@@ -378,3 +378,96 @@ section.cta.container p {
 }
 .btn-google-review:hover { filter: brightness(1.05); }
 
+
+/* ===== Cookie-Banner / Einwilligung (ergänzt 22.11.2026) ===== */
+.cookie-banner {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 1000;
+  background: var(--card);
+  color: var(--fg);
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 -6px 24px rgba(0,0,0,.4);
+  padding: 1rem;
+}
+.cookie-banner__inner { max-width: 1000px; margin: 0 auto; }
+.cookie-banner__title { margin: 0 0 .25rem; }
+.cookie-banner__text { margin: 0 0 .75rem; font-size: .95rem; }
+.cookie-banner__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+/* Beide Buttons bewusst gleichwertig (gleiche Größe, Farbe, Gewichtung) */
+.cookie-btn {
+  flex: 1 1 160px;
+  min-height: var(--tap);
+  padding: .6rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--muted);
+  background: #1b2344;
+  color: var(--fg);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cookie-btn:hover, .cookie-btn:focus-visible { background: #24305c; outline: 2px solid var(--accent); }
+
+/* Hervorgehobener Abschnitt Widerspruchsrecht (Art. 21 DSGVO) */
+.notice-box {
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  background: var(--card);
+}
+
+/* ===== FAQ-Seite (ergänzt 22.11.2026) ===== */
+.faq-item {
+  background: var(--card);
+  border: 1px solid #1f2747;
+  border-radius: var(--radius);
+  padding: .5rem 1.25rem 1rem;
+  margin: 1rem 0;
+}
+.faq-item h2 { font-size: 1.15rem; margin: .75rem 0 .5rem; }
+.faq-item ol { padding-left: 1.25rem; }
+.faq-item li { margin-bottom: .35rem; }
+
+/* ===== Startseite: Hero, Sanierungs-Check, Berater, Regionen (ergänzt 22.11.2026) ===== */
+.hero-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2rem; align-items: start; }
+.eyebrow { color: var(--accent); font-weight: 700; font-size: .9rem; letter-spacing: .02em; margin: 0 0 .5rem; }
+.lead { font-size: 1.1rem; color: var(--fg); }
+.checklist { list-style: none; padding: 0; margin: 1rem 0; }
+.checklist li { padding-left: 1.6rem; position: relative; margin: .35rem 0; }
+.checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.hero-actions .btn { margin: .25rem .5rem .25rem 0; }
+.hero-subsidy { padding: 1rem 1.25rem; }
+.hero-subsidy h2 { font-size: 1.15rem; margin-top: .5rem; }
+.big-number { font-size: 3rem; font-weight: 800; color: var(--accent); margin: .25rem 0; line-height: 1; }
+.small { font-size: .9rem; color: var(--muted); }
+.check-form { padding: 1rem 1.25rem; }
+.check-form fieldset { border: 0; padding: 0; margin: 0 0 1.25rem; display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+.check-form legend { font-weight: 700; margin-bottom: .5rem; width: 100%; }
+.check-form label { display: inline-flex; align-items: center; gap: .4rem; min-height: var(--tap); padding: 0 .75rem; border: 1px solid #1f2747; border-radius: var(--radius); background: #12172c; cursor: pointer; }
+.check-form label:has(input:checked) { border-color: var(--accent); background: #13261f; }
+.check-form .field { display: flex; flex-direction: column; align-items: stretch; padding: .5rem .75rem; gap: .25rem; cursor: default; }
+.check-form .field-wide { flex: 1 1 100%; }
+.check-form input[type="text"], .check-form input[type="tel"], .check-form textarea, #checkText {
+  font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--muted); border-radius: .35rem; padding: .5rem; min-height: var(--tap); width: 100%;
+}
+.check-error { color: #ffb4a8; font-weight: 700; }
+.advisor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+.advisor { display: grid; grid-template-columns: 140px 1fr; gap: 1rem; align-items: start; padding: 1rem; }
+.advisor img { width: 140px; height: 140px; object-fit: cover; border-radius: .75rem; border: 1px solid #1f2747; }
+.advisor h3 { margin-top: 0; }
+.region-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.region-card { display: flex; flex-direction: column; gap: .25rem; padding: 1rem; text-decoration: none; color: var(--fg); }
+.region-card strong { font-size: 1.15rem; color: var(--accent); }
+.region-card span { color: var(--muted); font-size: .95rem; }
+.region-card:hover { border-color: var(--accent); }
+.footer-regions { margin: .5rem 0 0; font-size: .9rem; color: var(--muted); }
+.info-box { border-left: 4px solid var(--accent); background: var(--card); padding: .75rem 1rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1rem 0; }
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .advisor { grid-template-columns: 1fr; }
+  .advisor img { width: 100%; height: auto; max-height: 320px; }
+}
+button.btn { font: inherit; font-weight: 700; border: 0; cursor: pointer; }
+.hero-grid h1 { font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.2; }
